@@ -1,0 +1,133 @@
+:root {
+    --background-color: #2f3237;  /* Main page background (dark gray) */
+    --card-bg-color: #3a3f45;     /* Card background */
+    --text-color: #ffffff;        /* Main text color */
+    --input-bg-color: #272b30;    /* Input field background */
+    --primary-color: #4a8ef1;     /* Accent/primary color (blue) */
+    --border-radius: 6px;         /* Rounded corners */
+    --transition-speed: 0.3s;
+    --shadow-color: rgba(0, 0, 0, 0.5);
+  }
+  
+  .login-container {
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 1rem;
+    background-color: var(--background-color);
+  }
+  
+  .login-box {
+    background-color: var(--card-bg-color);
+    padding: 2rem;
+    border-radius: var(--border-radius);
+    box-shadow: 0 4px 10px var(--shadow-color);
+    text-align: center;
+    width: 320px;
+  }
+  
+  .login-title {
+    font-size: 1.5rem;
+    color: var(--text-color);
+    margin-bottom: 1rem;
+  }
+  
+  .input-group {
+    text-align: left;
+    margin-bottom: 1rem;
+  }
+  
+  .input-group label {
+    display: block;
+    color: #ccc;
+    font-size: 0.9rem;
+    margin-bottom: 0.3rem;
+  }
+  
+  .input-group input {
+    width: 90%;
+    padding: 0.7rem 1rem;
+    border: none;
+    border-radius: var(--border-radius);
+    background-color: var(--input-bg-color);
+    color: var(--text-color);
+    transition: background-color var(--transition-speed) ease-in-out;
+    outline: none;
+  }
+  
+  .input-group input::placeholder {
+    color: #b0b0b0;
+    font-size: 0.9rem;
+  }
+  
+  /* Hover/Focus State: remove white border or outline */
+  .input-group input:focus {
+    background-color: #32363c; /* Slightly lighter than input-bg-color */
+    box-shadow: none;          /* Remove default focus outline in some browsers */
+    outline: none;
+  }
+  
+ 
+  
+  .password-wrapper {
+    display: flex;
+    align-items: center;
+  }
+
+  .password-input{
+    width: 100%;
+  }
+  
+  .toggle-password {
+    background: none;
+    border: none;
+    cursor: pointer;
+    color: var(--text-color);
+    font-size: 1rem;
+    padding: 0 0.5rem;
+    transition: color var(--transition-speed) ease-in-out;
+  }
+  
+  .toggle-password:hover {
+    color: var(--primary-color);
+  }
+  
+  .login-button {
+    width: 100%;
+    padding: 0.8rem 1rem;
+    background-color: var(--primary-color);
+    border: none;
+    color: var(--text-color);
+    border-radius: var(--border-radius);
+    cursor: pointer;
+    font-size: 1rem;
+    margin-top: 1rem;
+    transition: background-color var(--transition-speed) ease-in-out;
+  }
+  
+  .login-button:hover {
+    background-color: #3b7ee8; /* Slightly darker shade of primary color */
+  }
+  
+  .register-button {
+    width: 100%;
+    padding: 0.8rem 1rem;
+    background-color: transparent;
+    border: 1px solid #fff;
+    color: var(--text-color);
+    border-radius: var(--border-radius);
+    cursor: pointer;
+    font-size: 1rem;
+    margin-top: 1rem;
+    transition: background-color var(--transition-speed) ease-in-out;
+  }
+  
+  .register-button:hover {
+    background-color: var(--primary-color);
+    color: var(--text-color);
+  }
+  .button-container:has(.register-button:hover) .login-button {
+    background-color: #dfdcdb;
+    color:#444;
+  }  
