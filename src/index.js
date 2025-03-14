@@ -1,14 +1,14 @@
-import React from 'react';
-import ReactDOM from 'react-dom/client';
-import './index.css';
-import App from './App';
-import reportWebVitals from './reportWebVitals';
-import Login from './Auth/components/Login';
-import {BrowserRouter,Route,Routes} from "react-router-dom";
-import Error from './Error';
-import Register from './Auth/components/Register';
-import Dashboard from './MessagingUI/Dashboard';
-
+import React from "react";
+import ReactDOM from "react-dom/client";
+import "./index.css";
+import App from "./App";
+import reportWebVitals from "./reportWebVitals";
+import Login from "./Auth/components/Login";
+import { BrowserRouter, Route, Routes } from "react-router-dom";
+import Error from "./Error";
+import Register from "./Auth/components/Register";
+import ProtectedRoute from "./ProtectedRoute";
+import SlackLayout from "./MessagingUI/components/SlackLayout";
 
 const AppRouter = () => {
   return (
@@ -18,7 +18,14 @@ const AppRouter = () => {
 
         <Route path="/login" element={<Login />} />
         <Route path="/register" element={<Register />} />
-        <Route path="/dashboard" element={<Dashboard />} />
+        <Route
+          path="/dashboard"
+          element={
+            <ProtectedRoute>
+              <SlackLayout />
+            </ProtectedRoute>
+          }
+        />
 
         <Route path="*" element={<Error />} />
       </Routes>
@@ -26,9 +33,7 @@ const AppRouter = () => {
   );
 };
 
-
-
-const root = ReactDOM.createRoot(document.getElementById('root'));
+const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
   <React.StrictMode>
     <AppRouter />

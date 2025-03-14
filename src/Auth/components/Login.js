@@ -13,6 +13,12 @@ const Login = () => {
   const handleLogin = async (e) => {
     e.preventDefault(); // Prevent page reload on form submission
 
+    const isLoggedIn = localStorage.getItem("authToken");
+    if (isLoggedIn) {
+      console.log("Already logged in");
+      return;
+    }
+
     try {
       setErrorMessage(""); // Clear previous error messages
 
@@ -29,6 +35,10 @@ const Login = () => {
     } catch (error) {
       // Handle errors (e.g., wrong credentials)
       if (error.response) {
+
+       
+
+
         setErrorMessage(
           error.response.data.message || "Login failed. Try again."
         );

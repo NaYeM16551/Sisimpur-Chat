@@ -1,0 +1,135 @@
+/* Overall sidebar container */
+.custom-sidebar {
+    width: 70px;               /* Adjust as needed */
+    background-color: #fff;    /* Light background */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-top: 1rem;
+    border-right: 1px solid #ddd;
+    box-sizing: border-box;
+  }
+  
+  /* Avatar containers (top & bottom) */
+  .avatar-container {
+    position: relative;
+    margin-bottom: 2rem;
+  }
+  
+  .avatar-image {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    display: block;
+  }
+  
+  /* Notification bubble (e.g., "1" on top avatar or DMs) */
+  .notification-bubble {
+    position: absolute;
+    top: -5px;
+    right: -5px;
+    width: 18px;
+    height: 18px;
+    background-color: #f04747; /* Red for notifications */
+    color: #fff;
+    font-size: 0.75rem;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  /* Extra offset for the 'Channel' bubble */
+  .red {
+    top: -10px;
+    right: -10px;
+  }
+  
+  /* Navigation section */
+  .nav-section {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem; /* Spacing between nav items */
+  }
+  
+  /* Each nav item (icon + label) */
+  .nav-item {
+    position: relative;
+    width: 100%;
+    height: 48px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    color: #666;
+    cursor: pointer;
+  }
+  
+  /* Highlight for active nav item (e.g., the "Channel" item) */
+  .nav-item.active {
+    background-color: #e6e1f7; /* Light purple highlight */
+    border-radius: 0 10px 10px 0;
+    color: #333;
+  }
+  
+  /* Icon placeholder; typically replaced by SVG or icon fonts */
+  .icon {
+    width: 24px;
+    height: 24px;
+    margin-bottom: 4px;
+    font-size: 1.2rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #888;
+  }
+  
+  /* Example icon definitions using emojis (replace with real icons as desired) */
+  .home-icon::before {
+    content: "🏠";
+  }
+  .dm-icon::before {
+    content: "💬"; /* or something for "Channel" */
+  }
+  .activity-icon::before {
+    content: "🔔";
+  }
+  .later-icon::before {
+    content: "👤";
+  }
+  .more-icon::before {
+    content: "📎"; /* "Clip" icon */
+  }
+  .search-icon::before {
+    content: "🔍";
+  }
+  .settings-icon::before {
+    content: "⚙️";
+  }
+  
+  /* Label text under each icon */
+  .nav-label {
+    font-size: 0.7rem;
+  }
+  
+  /* Bottom icon spacing */
+  .bottom-icon {
+    margin-top: auto;
+    margin-bottom: 1.5rem;
+  }
+  .bottom-avatar {
+    margin-bottom: 1.5rem;
+  }
+  
+  /* Presence dot on the bottom avatar */
+  .presence-dot {
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    width: 12px;
+    height: 12px;
+    background-color: #43b581; /* Green presence indicator */
+    border: 2px solid #fff;    /* White border ring */
+    border-radius: 50%;
+  }
+  
